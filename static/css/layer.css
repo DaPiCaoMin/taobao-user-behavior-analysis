@@ -1,0 +1,186 @@
+/* 全局样式设置 */
+html {
+    font-family: sans-serif; /* 设置全局字体为sans-serif */
+    height: 100%; /* 设置html元素的高度为100% */
+    margin: 0; /* 移除html元素的默认外边距 */
+}
+
+body {
+    margin: 0; /* 移除body元素的默认外边距 */
+    height: 100%; /* 设置body元素的高度为100% */
+    background: #111; /* 设置背景颜色为深灰色 */
+    color: #fff; /* 设置文本颜色为白色 */
+    font-family: 'Arial', sans-serif; /* 设置全局字体为Arial */
+    overflow-x: hidden; /* 隐藏水平滚动条 */
+    display: flex; /* 使用flex布局 */
+    flex-direction: column; /* 设置flex方向为纵向 */
+}
+
+/* 头部样式设置 */
+header {
+    height: 80px; /* 设置头部高度 */
+    display: flex; /* 使用flex布局 */
+    align-items: center; /* 垂直居中 */
+    padding: 0 20px; /* 设置内边距 */
+    justify-content: center; /* 水平居中 */
+}
+
+/* 数据表格样式设置 */
+.data-table {
+    display: flex; /* 使用flex布局 */
+    justify-content: space-around; /* 子元素等距排列 */
+    margin: 10px 0; /* 设置外边距 */
+    padding: 2px; /* 缩小内边距 */
+    border-radius: 8px; /* 设置圆角 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 设置阴影效果 */
+    color: #f5f5f5; /* 设置文本颜色 */
+    height: 60px; /* 控制整体高度 */
+}
+
+.data-table div {
+    flex: 1 1 200px; /* 设置flex-grow, flex-shrink 和 flex-basis */
+    text-align: center; /* 文本居中对齐 */
+    margin: 0 10px; /* 设置外边距 */
+    padding: 30px; /* 设置内边距 */
+    border: 1px solid #ccc; /* 设置边框 */
+}
+
+/* 单个数据项样式设置 */
+.data-item {
+    text-align: center; /* 文本居中对齐 */
+    background-color: #2c2c2e; /* 设置背景颜色 */
+    padding: 3px 5px; /* 缩小内边距 */
+    border-radius: 8px; /* 设置圆角 */
+    transition: transform 0.3s, box-shadow 0.3s; /* 设置变换和阴影的过渡效果 */
+    color: #ffffff; /* 设置文本颜色 */
+    margin: 2px; /* 设置外边距 */
+    flex: 1; /* 使每个元素均分父元素宽度 */
+    max-height: 60px; /* 控制每个数据项的最大高度 */
+    display: flex; /* 使用flex布局 */
+    flex-direction: column; /* 设置flex方向为纵向 */
+    justify-content: center; /* 垂直居中 */
+}
+
+.data-item:hover {
+    transform: translateY(-3px); /* 鼠标悬停时上移 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 设置阴影效果 */
+}
+
+.data-item p:first-child {
+    font-size: 18px; /* 设置字体大小 */
+    font-weight: bold; /* 设置字体粗细 */
+    color: #3498db; /* 设置数字颜色为蓝色 */
+    margin: 0; /* 移除默认的外边距 */
+}
+
+.data-item p:last-child {
+    font-size: 14px; /* 设置字体大小 */
+    color: #a1a1a1; /* 设置文本颜色 */
+    margin: 0; /* 移除默认的外边距 */
+}
+
+/* 标题样式设置 */
+h1 {
+    font-size: 3rem; /* 设置字体大小 */
+    font-weight: bold; /* 设置字体粗细 */
+    margin: 0; /* 移除默认的外边距 */
+    text-align: center; /* 文本居中对齐 */
+    background: linear-gradient(90deg, #00c6ff, #0072ff); /* 设置背景渐变 */
+    -webkit-background-clip: text; /* 使背景渐变应用到文本 */
+    -webkit-text-fill-color: transparent; /* 使文本填充颜色透明 */
+    animation: gradientAnimation 5s ease infinite; /* 设置渐变动画 */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* 设置文本阴影 */
+    letter-spacing: 3px; /* 设置字母间距 */
+    padding: 20px 0; /* 设置内边距 */
+    position: relative; /* 设置相对定位 */
+}
+
+h1::before {
+    content: ""; /* 插入一个内容为空的伪元素 */
+    position: absolute; /* 绝对定位 */
+    left: 0; /* 左边距 */
+    right: 0; /* 右边距 */
+    bottom: 0; /* 底边距 */
+    height: 4px; /* 设置高度 */
+    background: linear-gradient(90deg, transparent, #0072ff, transparent); /* 设置背景渐变 */
+    animation: glow 2s ease-in-out infinite; /* 设置发光动画 */
+    border-radius: 4px; /* 设置圆角 */
+}
+
+/* 渐变动画 */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%; /* 初始位置 */
+    }
+    50% {
+        background-position: 100% 50%; /* 中间位置 */
+    }
+    100% {
+        background-position: 0% 50%; /* 最终位置 */
+    }
+}
+
+/* 发光动画 */
+@keyframes glow {
+    0% {
+        opacity: 0; /* 初始透明度 */
+        box-shadow: 0 0 10px #0072ff; /* 初始阴影 */
+    }
+    50% {
+        opacity: 1; /* 中间透明度 */
+        box-shadow: 0 0 20px #0072ff; /* 中间阴影 */
+    }
+    100% {
+        opacity: 0; /* 最终透明度 */
+        box-shadow: 0 0 10px #0072ff; /* 最终阴影 */
+    }
+}
+
+/* 主体样式设置 */
+main {
+    display: flex; /* 使用flex布局 */
+    flex-grow: 1; /* 使主体内容填满剩余空间 */
+    padding: 20px; /* 设置内边距 */
+    overflow: auto; /* 允许滚动 */
+}
+
+/* 图表容器样式设置 */
+.charts-container {
+    display: flex; /* 使用flex布局 */
+    flex-wrap: wrap; /* 允许换行 */
+    padding: 10px; /* 设置内边距 */
+    gap: 10px; /* 设置子元素间距 */
+}
+
+.charts-container > article {
+    width: 48%; /* 设置宽度 */
+    background: #222; /* 设置背景颜色 */
+    padding: 10px; /* 设置内边距 */
+    border-radius: 5px; /* 设置圆角 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 设置阴影效果 */
+}
+
+/* 按钮容器样式设置 */
+.buttons {
+    display: flex; /* 使用flex布局 */
+    justify-content: flex-end; /* 子元素靠右对齐 */
+    padding: 20px; /* 设置内边距 */
+}
+
+/* 按钮样式设置 */
+.buttons button {
+    margin-left: 10px; /* 设置左外边距 */
+    background-color: #333; /* 设置背景颜色 */
+    color: #fff; /* 设置文本颜色 */
+    border: none; /* 移除默认边框 */
+    padding: 10px 20px; /* 设置内边距 */
+    border-radius: 5px; /* 设置圆角 */
+    cursor: pointer; /* 设置鼠标指针样式 */
+}
+
+/* 媒体查询：在屏幕宽度小于768像素时应用以下样式 */
+@media (max-width: 768px) {
+    .charts-container > article {
+        width: 100%; /* 设置宽度为100% */
+    }
+}

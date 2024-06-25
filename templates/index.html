@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据可视化</title>
+    <!-- 引入 layer.css 样式表 -->
+    <link href="../static/css/layer.css" rel="stylesheet">
+    <!-- 引入 echarts.min.js 绘图库 -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+    <!-- 引入 main.js 脚本文件，type="module" 表示模块化加载 -->
+    <script src="../static/js/main.js" type="module"></script>
+</head>
+
+<body>
+<!-- 页面头部 -->
+<header>
+    <h1>淘宝用户行为大数据分析</h1>
+</header>
+
+<section>
+    <!-- 数据表格部分，用于展示数据摘要 -->
+    <div class="data-table">
+        <div class="data-item">
+            {# 使用模板语法 {{ }} 来插入数据 #}
+            <p>{{ data_summary.user_count }}</p>
+            <p>用户</p>
+        </div>
+
+        <div class="data-item">
+            <p>{{ data_summary.item_count }}</p>
+            <p>商品</p>
+        </div>
+
+        <div class="data-item">
+            <p>{{ data_summary.category_count }}</p>
+            <p>类别</p>
+        </div>
+
+        <div class="data-item">
+            <p>{{ data_summary.click_count }}</p>
+            <p>点击</p>
+        </div>
+
+        <div class="data-item">
+            <p>{{ data_summary.purchase_count }}</p>
+            <p>购买</p>
+        </div>
+
+        <div class="data-item">
+            <p>{{ data_summary.cart_count }}</p>
+            <p>购物车</p>
+        </div>
+
+        <div class="data-item">
+            <p>{{ data_summary.fav_count }}</p>
+            <p>收藏</p>
+        </div>
+    </div>
+
+    <!-- 图表容器部分 -->
+    <div class="charts-container">
+        <!-- 每日用户行为统计图表 -->
+        <article>
+            <div id="dailyChart" style="width: 100%; height: 300px; min-height: 300px;"></div>
+        </article>
+
+        <!-- 分时用户行为统计图表 -->
+        <article>
+            <div id="hourlyChart" style="width: 100%; height: 300px; min-height: 300px;"></div>
+        </article>
+
+        <!-- 点击Top10商品图表 -->
+        <article>
+            <div id="clickChart" style="width: 100%; height: 300px; min-height: 300px;"></div>
+        </article>
+
+        <!-- 购买Top10商品图表 -->
+        <article>
+            <div id="purchaseChart" style="width: 100%; height: 300px; min-height: 300px;"></div>
+        </article>
+    </div>
+
+    <!-- 按钮区域 -->
+    <div class="buttons">
+        <button id="overviewBtn">总览</button>
+        <button id="timeBtn">时间</button>
+        <button id="top10Btn">Top10</button>
+    </div>
+</section>
+</body>
+
+</html>
